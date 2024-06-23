@@ -1,19 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (C) 2021 The Android Open Source Project.
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~     http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  -->
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/fragment_item_detail"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -22,77 +9,118 @@
     android:layout_margin="@dimen/margin"
     tools:context=".ItemDetailFragment">
 
-    <TextView
-        android:id="@+id/item_name"
-        style="@style/Widget.Inventory.TextView"
-        android:layout_width="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Screwdrivers" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/detail_head"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="@id/fragment_item_detail"
+        app:layout_constraintEnd_toEndOf="@id/fragment_item_detail"
+        app:layout_constraintTop_toTopOf="@id/fragment_item_detail"
+        >
 
-    <TextView
-        android:id="@+id/item_price"
-        style="@style/Widget.Inventory.TextView"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="@dimen/margin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_name"
-        tools:text="$5.50" />
+        <TextView
+            android:id="@+id/item_name"
+            style="@style/Widget.Inventory.TextView"
+            android:layout_width="wrap_content"
+            android:textSize="24sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Screwdrivers" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/item_count_label"
-        style="@style/Widget.Inventory.TextView"
-        android:layout_width="wrap_content"
-        android:text="@string/quantity"
-        app:layout_constraintBaseline_toBaselineOf="@+id/item_count"
-        app:layout_constraintEnd_toStartOf="@+id/item_count"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/detail_body"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="20dp"
+        app:layout_constraintEnd_toEndOf="@id/fragment_item_detail"
+        app:layout_constraintStart_toStartOf="@id/fragment_item_detail"
 
-    <TextView
-        android:id="@+id/item_count"
-        style="@style/Widget.Inventory.TextView"
-        android:layout_width="0dp"
-        android:layout_marginStart="@dimen/margin_between_elements"
-        android:layout_marginTop="@dimen/margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/item_count_label"
-        app:layout_constraintTop_toBottomOf="@+id/item_price"
-        tools:text="5" />
-
-    <Button
-        android:id="@+id/sell_item"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin"
-        android:text="@string/sell"
-        app:layout_constraintBottom_toTopOf="@+id/delete_item"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_count" />
-
-    <Button
-        android:id="@+id/delete_item"
-        style="?attr/materialButtonOutlinedStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin"
-        android:text="@string/delete"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sell_item" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/edit_item"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_between_elements"
-        android:layout_marginBottom="@dimen/margin_between_elements"
-        android:contentDescription="@string/edit_item"
-        android:src="@drawable/ic_edit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@android:color/white" />
+        app:layout_constraintTop_toBottomOf="@+id/detail_head">
+
+        <TextView
+            android:id="@+id/item_price_label"
+            style="@style/Widget.Inventory.TextView"
+            android:layout_width="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:text="@string/price_label"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_price"
+            style="@style/Widget.Inventory.TextView"
+            android:layout_width="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/item_count"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Rp5,000" />
+
+        <TextView
+            android:id="@+id/item_count_label"
+            style="@style/Widget.Inventory.TextView"
+            android:layout_width="wrap_content"
+            android:text="@string/quantity"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_price_label" />
+
+        <TextView
+            android:id="@+id/item_count"
+            style="@style/Widget.Inventory.TextView"
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/item_count_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_count_label"
+            app:layout_constraintTop_toTopOf="@id/item_count_label"
+            tools:text="1000" />
+
+<!--        tools:layout_editor_absoluteX="144dp"-->
+<!--        tools:layout_editor_absoluteY="38dp"-->
+        <Button
+            android:id="@+id/sell_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sell"
+            tools:layout_editor_absoluteY="75dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_count_label"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/delete_item"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/delete"
+            android:textColor="@color/red_700"
+            app:backgroundTint="#00D32F2F"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/edit_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/edit_item"
+            android:src="@drawable/ic_edit"
+            app:tint="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@id/delete_item"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

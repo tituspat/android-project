@@ -19,6 +19,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.text.NumberFormat
+import java.util.Locale
 
 /**
  * Entity data class represents a single row in the database.
@@ -38,4 +39,4 @@ data class Item(
  * Returns the passed in price in currency format.
  */
 fun Item.getFormattedPrice(): String =
-    NumberFormat.getCurrencyInstance().format(itemPrice)
+    NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(itemPrice)
