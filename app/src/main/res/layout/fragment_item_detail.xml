@@ -7,7 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/margin"
-    android:background=""
     tools:context=".ItemDetailFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +21,7 @@
             android:id="@+id/imageView"
             android:layout_width="131dp"
             android:layout_height="50dp"
-            android:src="@drawable/Logo"
+            android:src="@drawable/logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -70,8 +69,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="170dp"
-            android:background="@drawable/form_backgroud"
+            android:layout_marginStart="130dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/item_price_label"
             app:layout_constraintTop_toTopOf="@+id/item_price_label"
@@ -88,9 +86,9 @@
                     style="@style/Widget.Inventory.TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
+                    android:layout_gravity="start"
                     android:textSize="20sp"
-                    tools:text="Rp5,000" />
+                    tools:text="Rp50,000" />
             </FrameLayout>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,8 +105,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="170dp"
-            android:background="@drawable/form_backgroud"
+            android:layout_marginStart="130dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/item_count_label"
             app:layout_constraintTop_toTopOf="@+id/item_count_label"
@@ -125,7 +122,7 @@
                     style="@style/Widget.Inventory.TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
+                    android:layout_gravity="start"
                     android:textSize="20sp"
                     tools:text="1000" />
             </FrameLayout>
