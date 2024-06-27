@@ -10,6 +10,7 @@
     <style name="Widget.Inventory.TextView" parent="Widget.MaterialComponents.TextView">
         <item name="android:textSize">16sp</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
     </style>
 
@@ -19,7 +20,6 @@
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textAppearance">?attr/textAppearanceOverline</item>
     </style>
 
     <style name="Divider">
@@ -37,4 +37,15 @@
         <item name="helperTextTextAppearance">@style/TextAppearance.MaterialComponents.Subtitle1
         </item>
     </style>
+
+    <style name="CustomButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:padding">10dp</item> <!-- Padding -->
+        <item name="cornerRadius">25dp</item> <!-- Corner radius -->
+        <item name="android:color">@color/dark_grey</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <!-- Add more attributes as needed -->
+    </style>
+
+
 </resources>

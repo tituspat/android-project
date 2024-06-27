@@ -16,15 +16,18 @@
 
 package com.example.inventory
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.inventory.databinding.ItemListFragmentBinding
+
 
 /**
  * Main fragment displaying details for all items in the database.
@@ -48,6 +51,7 @@ class ItemListFragment : Fragment() {
         return binding.root
     }
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -73,4 +77,6 @@ class ItemListFragment : Fragment() {
             this.findNavController().navigate(action)
         }
     }
+
 }
+
